@@ -102,24 +102,6 @@
         }
  
 
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         //sayem
 
 
@@ -130,15 +112,23 @@
         body {
           height: 2000px;
         }
-        .navbar .navbar-brand {
+        .navbar {
+            .navbar-brand {
           font-size: 30px;
         }
-        .navbar .nav-item {
+        }
+        .navbar {
+            .nav-item {
           padding: 10px 20px;
         }
-        .navbar .nav-link {
+        }
+        
+        .navbar 
+        {
+            .nav-link {
           font-size: 20px;
           margin-left: 10px;
+        }
         }
         .fa-bars {
           color: #323232;
