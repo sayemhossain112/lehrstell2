@@ -724,11 +724,31 @@ select {
 
 
     @media only screen and (max-width: 768px) {
+        
+.btn1 {
+    margin-top: 20px;
+    font-size: 6px;
+    width: 65px;
+}
+.btn2 {
+    margin-top: 20px;
+
+    font-size: 9px;
+    width: 80px;
+}
         .page {
             width: 20em;
             height: auto;
             padding: 5mm;
             background: white;
+        }
+        #pdf-page{
+            width: 45em !important;
+            height: auto;
+            padding: 5mm;
+            background: white;
+            margin: auto;
+            zoom: 0.3;
         }
         .form-control{
             width: 160%;
