@@ -42,7 +42,7 @@
                     
                 </div> 
                 </div>
-                <div class="col-md-2" style="margin:auto; padding-top: 15px"> 
+                <div class="col-md-2" style="margin:auto; padding-top: 15px; margin-bottom: 25px;"> 
                     <div class=" ">
                         <span *ngIf="i!=0" class="clickable  delete-text " (click)="deleteSchulbildungObj(i)">&#10060;
                             Löschen</span>
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                         <div class="col-md-1" *ngIf="i==0" style="margin-right: 17px;"></div>
-                        <div class="col-md-1" *ngIf="i!=0">
+                        <div class="col-md-1" *ngIf="i!=0" style="margin-bottom: 20px">
                             <span class="clickable" (click)="deleteLanguageObj(i)">&#10060;</span>
                             <span class="clickable delete-text" (click)="deleteLanguageObj(i)">Löschen</span>
                         </div>
@@ -150,7 +150,7 @@
                     <textarea id="description" placeholder="{{hobby.rightBoxPlaceHolder}}" [maxlength]="78"
                         name="comment-area" [(ngModel)]="hobby.description" rows="3" class="form-control"></textarea>
                   </div>
-                <div class="col-md-2">
+                <div class="col-md-2" style="margin-bottom: 20px;">
                       <span *ngIf="i>0" class="clickable" (click)="deleteHobbyObj(i)"> &nbsp;&nbsp; &#10060;</span>
                     <span *ngIf="i>0" class="clickable delete-text" (click)="deleteHobbyObj(i)">Löschen</span>
                 

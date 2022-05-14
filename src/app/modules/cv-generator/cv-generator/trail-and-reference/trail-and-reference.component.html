@@ -113,8 +113,8 @@
                         <input type="text" [(ngModel)]="trail.ort" id="Job" class="form-control" name="Job" />
                     </div> 
                 </div>
-                <div class="col-md-2" style="margin: auto; padding-top:25px">
-                    <div class="form-group">
+                <div class="col-md-2" style="margin: auto; padding-top:25px; margin-bottom: 25px;">
+                    <div class=" ">
                                              <span class="clickable" (click)="deleteTrailObject(i)">&#10060;</span>
                     <span class="clickable delete-text" (click)="deleteTrailObject(i)">Löschen</span>
 
@@ -165,7 +165,7 @@
                         <label for="lname" class=" ">Nachname</label>
                         <input type="text" [(ngModel)]="reference.lastName" id="lname" class=" form-control" name="lname"
                         placeholder="" />
-                        <div>
+                        <div style="margin-bottom: 25px;">
                              <span *ngIf="i!=0" class="clickable" (click)="deleteRefObject(i)">&#10060;</span>
                         <span *ngIf="i!=0" class="clickable delete-text" (click)="deleteRefObject(i)"
                             style="margin-top: 4px;">Löschen</span>
