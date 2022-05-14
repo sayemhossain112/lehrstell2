@@ -1,89 +1,140 @@
 <div class="cv-generator" id="cvGenerator">
-    <div class="content auto-Width">
-        <div class="page page-ms" id="pdf-page" #content>
-            <div class="section">
-                <div class="ms-body">
-                    <div class="mb-10"></div>
-                    <p align="justify">
-                        {{commonService.msPersonalForm?.firstName +' '+commonService.msPersonalForm?.lastName}}<br>
-                        {{commonService.msPersonalForm?.street +' '+commonService.msPersonalForm?.number}}<br>
-                        {{commonService.msPersonalForm?.zip +' '+commonService.msPersonalForm?.place}}<br>
-                        {{commonService.msPersonalForm?.email}}<br>
-                        {{commonService.msPersonalForm?.mobile }}
+  <div class="content auto-Width">
+    <div class="page page-ms" id="pdf-page" #content>
+      <div class="section">
+        <div class="ms-body">
+          <div class="mb-10"></div>
+          <p align="justify">
+            {{commonService.msPersonalForm?.firstName +' '+commonService.msPersonalForm?.lastName}}<br>
+            {{commonService.msPersonalForm?.street +' '+commonService.msPersonalForm?.number}}<br>
+            {{commonService.msPersonalForm?.zip +' '+commonService.msPersonalForm?.place}}<br>
+            {{commonService.msPersonalForm?.email}}<br>
+            {{commonService.msPersonalForm?.mobile }}
 
-                    </p>
-                    <div class="mb-10"></div>
-                    <p align="justify">
-                        {{commonService.msPersonalForm?.derFirma}}<br>
-                        <span *ngIf="commonService.msPersonalForm.schreibst != 'unknown'">
-                        z.H. {{commonService.msPersonalForm?.schreibst1Name +'
+          </p>
+          <div class="mb-10"></div>
+          <p align="justify">
+            {{commonService.msPersonalForm?.derFirma}}<br>
+            <span *ngIf="commonService.msPersonalForm.schreibst != 'unknown'">
+              z.H. {{commonService.msPersonalForm?.schreibst1Name +'
                         '+commonService.msPersonalForm?.schreibst2Name }}<br>
-                        </span>
-                        {{commonService.msPersonalForm?.dfStreet }}<br>
-                        {{commonService.msPersonalForm?.dfZip +' '+commonService.msPersonalForm?.dfPlace}}
+            </span>
+            {{commonService.msPersonalForm?.dfStreet }}<br>
+            {{commonService.msPersonalForm?.dfZip +' '+commonService.msPersonalForm?.dfPlace}}
 
-                    </p>
-                    <div class="mb-10"></div>
-                    <p align="justify"> {{commonService.msPersonalForm?.dob | date : 'dd. MMMM yyyy'}} </p>
-                    <div class="mb-10"></div>
-                    <!-- class="bold" -->
-                    <p align="justify"><b> Bewerbung um eine {{commonService.msType |titlecase}} als
-                            {{commonService.msPersonalForm?.dfBeruf |titlecase}}
-                            {{commonService.msPersonalForm?.ebaOrEfz }}</b>
-                    </p>
-                    <div class="mb-10"></div>
-                    <p class="mb-15px" *ngIf="commonService.msPersonalForm?.schreibst=='unknown'">
-                        Sehr geehrte Damen und Herren
-                    </p>
-                    <p *ngIf="commonService.msPersonalForm?.schreibst!='unknown'  ">
-                        Sehr
-                        <span *ngIf="commonService.msPersonalForm?.schreibst=='Frau'">geehrte</span>
-                        <span *ngIf="commonService.msPersonalForm?.schreibst=='Herr'">geehrter</span>
-                        {{ commonService.msPersonalForm?.schreibst}}
-                        {{commonService.msPersonalForm?.schreibst2Name}}
-                    </p>
+          </p>
+          <div class="mb-10"></div>
+          <p align="justify"> {{commonService.msPersonalForm?.dob | date : 'dd. MMMM yyyy'}} </p>
+          <div class="mb-10"></div>
+          <!-- class="bold" -->
+          <p align="justify"><b> Bewerbung um eine {{commonService.msType |titlecase}} als
+              {{commonService.msPersonalForm?.dfBeruf |titlecase}}
+              {{commonService.msPersonalForm?.ebaOrEfz }}</b>
+          </p>
+          <div class="mb-10"></div>
+          <p class="mb-15px" *ngIf="commonService.msPersonalForm?.schreibst=='unknown'">
+            Sehr geehrte Damen und Herren
+          </p>
+          <p *ngIf="commonService.msPersonalForm?.schreibst!='unknown'  ">
+            Sehr
+            <span *ngIf="commonService.msPersonalForm?.schreibst=='Frau'">geehrte</span>
+            <span *ngIf="commonService.msPersonalForm?.schreibst=='Herr'">geehrter</span>
+            {{ commonService.msPersonalForm?.schreibst}}
+            {{commonService.msPersonalForm?.schreibst2Name}}
+          </p>
 
-                    <p class="mb-15px" align="justify"> {{commonService.lehrStepTwoData.textArea1}}</p>
-                    <p class="mb-15px" align="justify">{{commonService.lehrStepTwoData.textArea2}}</p>
-                    <p class="mb-15px" align="justify">{{commonService.lehrStepTwoData.textArea3}}</p>
-                    <p class="mb-15px" align="justify">{{commonService.lehrStepThreeData.textArea1}}</p>
+          <p class="mb-15px" align="justify"> {{commonService.lehrStepTwoData.textArea1}}</p>
+          <p class="mb-15px" align="justify">{{commonService.lehrStepTwoData.textArea2}}</p>
+          <p class="mb-15px" align="justify">{{commonService.lehrStepTwoData.textArea3}}</p>
+          <p class="mb-15px" align="justify">{{commonService.lehrStepThreeData.textArea1}}</p>
 
-                    <!-- Static text -->
-                    <p align="justify">Ich freue mich, wenn Sie mich zu einem Vorstellungsgespräch einladen, damit ich Sie von meiner Persönlichkeit überzeugen kann und warte gespannt auf Ihre Antwort.
-                    </p>
-                    <!-- Static text -->
-                    <p align="justify">Freundliche Grüsse
-                    </p>
+          <!-- Static text -->
+          <p align="justify">Ich freue mich, wenn Sie mich zu einem Vorstellungsgespräch einladen, damit ich Sie von
+            meiner Persönlichkeit überzeugen kann und warte gespannt auf Ihre Antwort.
+          </p>
+          <!-- Static text -->
+          <p align="justify">Freundliche Grüsse
+          </p>
 
-                    <div class="mb-10"></div>
-                    <p align="justify">
-                        {{commonService.msPersonalForm?.firstName +' '+commonService.msPersonalForm?.lastName}}
-                        <!-- Mike Muster -->
-                    </p>
+          <div class="mb-10"></div>
+          <p align="justify">
+            {{commonService.msPersonalForm?.firstName +' '+commonService.msPersonalForm?.lastName}}
+            <!-- Mike Muster -->
+          </p>
 
-                    <!-- Static heading -->
-                    <div class="mb-10"></div>
-                    <p class="ms-bottom-text" *ngIf="beilagen!=''">Beilagen: <br>
-                        {{beilagen}}
-                    </p>
-                </div>
-            </div>
-
+          <!-- Static heading -->
+          <div class="mb-10"></div>
+          <p class="ms-bottom-text" *ngIf="beilagen!=''">Beilagen: <br>
+            {{beilagen}}
+          </p>
         </div>
-        <div class="mb-50"></div>
-        <div class="hell" style="text-align: center;
-         margin-top: 80px;" >
-         <div class="row">
-             <div class="col-md-12">
-                <a class="next-btn back-btn" (click)="onBack()">zurück</a>
-                <a class="next-btn second-btn" (click)="exportToPDF()">Download PDF</a>
-                <a class="next-btn" (click)="exportToWord()">Download Word</a>
-             </div>
-             
-         </div>
-            
-        </div>
-        
+      </div>
+
     </div>
+    <div class="mb-50"></div>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 btn-grp" > 
+                <button class="btn clickable btn-def2 "  (click)="onBack()">zurück</button>
+                <div class="export_btn">
+                    <button class="btn clickable btn-def" (click)="exportToPDF()">Download PDF</button>
+                     <button class="btn clickable btn-def" (click)="exportToWord()">Download Word</button> 
+                </div>
+              
+          </div>
+        </div>
+    
+      </div>
+  
+  </div>
+
+  <style>
+      .btn-def2{
+                    background-color: #ffffff;
+                    width: auto;
+                    height: 36px; 
+                    font-size: 10px; 
+                    color: black;
+                    font-family: "Montserrat";
+                    font-weight: bold;
+                    cursor: pointer;
+                    border: 1px solid black;
+                }
+                .btn-def{
+                    background-color: #ffdf59;
+                    width: auto;
+                    height: 36px;
+                   
+                    font-size: 10px;
+                     
+                    color: black;
+                    font-family: "Montserrat";
+                    font-weight: bold;
+                    cursor: pointer; margin-right: 20px;
+                }
+                .btn-grp{
+                    margin-top: 50px;
+                    margin: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                @media only screen and (max-width: 768px) {
+                    .btn-grp{
+                   
+                    display: block;
+                    
+                }  
+                .btn-def{
+                  
+                    height: 26px;
+                   
+                    font-size: 8px;
+                    margin-top: 20px;
+                }
+                }
+  </style>
+
+
 
 </div>
