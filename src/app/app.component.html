@@ -1,0 +1,5 @@
+<app-header *ngIf="_router.url !='/cv-generator/preview'"></app-header>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>
+<app-footer *ngIf="_router.url !='/cv-generator/preview'"></app-footer>

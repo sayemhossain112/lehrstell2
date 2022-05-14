@@ -1,0 +1,183 @@
+<div class="second-step">
+
+    <div class="full-content container">
+        <!-- School -->
+          
+        <div class="row">
+            <div class="col-md-12">
+                <span class="small-heading">
+                    Schulbildung
+                </span>
+            </div>
+        </div>
+
+        <ng-container *ngFor="let scholl of commonService.schooling;let i = index">
+            <div class="row">
+                <div class="col-md-2"> 
+                    <div class="form-group">
+                        <label for="Last" >Von</label>
+                        <select data-placeholder="" [(ngModel)]="scholl.von" class="form-control">
+                            <option *ngFor="let year of years" value="{{year}}">{{year}}</option>
+                        </select>
+                    </div> 
+                </div>
+                <div class="col-md-2"> 
+                    <div class="form-group">
+                        <label for="First" class=" ">Bis</label> 
+                        <select data-placeholder="" [(ngModel)]="scholl.bis" class="form-control">
+                            <option *ngFor="let year of years" value="{{year}}">{{year}}</option>
+                        </select>                    </div> 
+                </div>
+                <div class="col-md-3"> 
+                    <div class="form-group">
+                        <label for="First" class=" ">Schule</label>
+                        <input type="text" placeholder="Primarschule Grossfeld" [(ngModel)]="scholl.schule" id="First"
+                        class="form-control" name="First" />
+                    </div> 
+                </div>
+                <div class="col-md-2"> 
+                    <div class="form-group">
+                        <label for="Job" class=" ">Ort</label>
+                        <input type="text" [(ngModel)]="scholl.ort" id="Job" class="form-control" name="Job" />                
+                    
+                </div> 
+                </div>
+                <div class="col-md-2" style="margin:auto; padding-top: 15px"> 
+                    <div class=" ">
+                        <span *ngIf="i!=0" class="clickable  delete-text " (click)="deleteSchulbildungObj(i)">&#10060;
+                            Löschen</span>
+                </div> 
+                </div>
+                
+               
+            </div>
+        </ng-container>
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-12" style="display: flex; margin-top: -15px;">
+                <div class="plus-icon clickable margin-top-0" (click)="addSchooling()"> </div>
+                <span class="mt-0-6 icon-after-text clickable" (click)="addSchooling()"> Schule hinzufügen </span>
+        
+            </div>
+           </div>
+
+
+        <!-- Language -->
+          
+
+        <div class="mb-30">	</div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <span class="small-heading">
+                    Sprachen
+                    <!-- <span class="info-Box-line"> Wähle die sprachen aus oder schreibe selbst ins feld. </span> -->
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ng-container *ngFor="let language of commonService.languages ;let i = index">
+                    <div class="row">
+                        <div class="col-md-2 form-group">
+                            <input type="text" list="language" [(ngModel)]="language.language" class="form-control"/>
+                            <datalist id="language">
+                                <option>Deutsch</option>
+                                <option>Englisch</option>
+                                <option>Französisch</option>
+                                <option>Italienisch</option>
+                            </datalist>
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <select data-placeholder="" [(ngModel)]="language.type" class="form-control">
+                                <option value="Muttersprache">Muttersprache</option>
+                                <option value="Schulkenntnisse seit 2 Jahren">Schulkenntnisse seit 2 Jahren </option>
+                                <option value="Schulkenntnisse seit 3 Jahren">Schulkenntnisse seit 3 Jahren</option>
+                                <option value="Schulkenntnisse seit 4 Jahren">Schulkenntnisse seit 4 Jahren</option>
+                                <option value="Schulkenntnisse seit 5 Jahren">Schulkenntnisse seit 5 Jahren</option>
+                                <option value="Schulkenntnisse seit 6 Jahren">Schulkenntnisse seit 6 Jahren</option>
+                                <option value="Schulkenntnisse seit 7 Jahren">Schulkenntnisse seit 7 Jahren</option>
+                            </select>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="info-box">
+                                Wähle die Sprachen aus oder schreibe selbst ins Feld.
+                            </div>
+                        </div>
+                        <div class="col-md-1" *ngIf="i==0" style="margin-right: 17px;"></div>
+                        <div class="col-md-1" *ngIf="i!=0">
+                            <span class="clickable" (click)="deleteLanguageObj(i)">&#10060;</span>
+                            <span class="clickable delete-text" (click)="deleteLanguageObj(i)">Löschen</span>
+                        </div>
+                    </div>
+                </ng-container>
+                <div class="row" style="margin-top: -15px;">
+                    <div class="col-md-12" style="display: flex;align-items: center; ">
+                        <div class="plus-icon clickable margin-top-0" (click)="addlanguage()"> </div>
+                    <span class="icon-after-text clickable" (click)="addlanguage()"> Sprache hinzufügen </span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+               
+             
+        </div>
+
+
+        <!-- Hobbys -->
+          <div class="mb-30">	</div>
+        <div class="row">
+            <div class="col-md-12">
+                <span class="small-heading">
+                    Hobbys
+                </span>
+            </div>
+        </div>
+        <ng-container *ngFor="let hobby of commonService.hobbys;let i = index">
+            <div class="row">
+                <div class="col-md-3 form-group">
+                    <input type="text" placeholder="{{hobby.leftBoxPlaceHolder}}" class="form-control" [(ngModel)]="hobby.name" />
+                </div>
+                <div class="col-md-7 form-group" >
+                    <textarea id="description" placeholder="{{hobby.rightBoxPlaceHolder}}" [maxlength]="78"
+                        name="comment-area" [(ngModel)]="hobby.description" rows="3" class="form-control"></textarea>
+                  </div>
+                <div class="col-md-2">
+                      <span *ngIf="i>0" class="clickable" (click)="deleteHobbyObj(i)"> &nbsp;&nbsp; &#10060;</span>
+                    <span *ngIf="i>0" class="clickable delete-text" (click)="deleteHobbyObj(i)">Löschen</span>
+                
+                </div>
+            </div>
+        </ng-container>
+
+        <div class="row" style="margin-top: -15px;">
+            <div class="col-md-12" style="display: flex; align-items: center;">
+                <div class="plus-icon clickable" (click)="addHobby()"> </div>
+            <span class="icon-after-text clickable" (click)="addHobby()"> Hobby hinzufügen </span>
+            </div>
+            
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <a class="next-btn back-btn" (click)="onBack()">zurück</a>
+            <a class="next-btn" (click)="onNext()">weiter</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,71 @@
+<div class="first-step">
+    <div class="motivation-container">
+
+        <div class="row">
+            <div class="col-100">
+                <span class="small-heading red-color">
+                    <span class="underline">Beantworte</span> die Fragen.
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-100">
+                <label class="red-color">
+                    (die Vorlage hilft dir, wenn du nicht genau weisst, was du schreiben sollst).
+                </label>
+            </div>
+        </div>
+        <div class="mb-20"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="">Was ist der Grund für diese Bewerbung? Hast du evtl. schon ein Telefonanruf
+                    an dieses Unternehmen gemacht? Schreibe dies hier hin.</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <textarea [(ngModel)]="commonService.schnStepTwoData.textArea1" id="description" class="col-100"
+                    name="comment-area" rows="5"
+                    placeholder={{commonService.schnStepTwoData.textArea1PlaceHolder}}></textarea>
+            </div>
+        </div>
+
+
+        <div class="mb-10"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="">Wo gehst du in die Schule (Name der Schule/ Schulstufe / Schulniveau)? Was
+                    sind deine Lieblingsfächer und was sind deine Hobbys?</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <textarea [(ngModel)]="commonService.schnStepTwoData.textArea2" id="description" class="col-100"
+                    name="comment-area" rows="5"
+                    placeholder={{commonService.schnStepTwoData.textArea2PlaceHolder}}></textarea>
+            </div>
+        </div>
+
+
+        <div class="mb-10"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="">Warum möchtest du eine Schnupperlehre in diesem Beruf machen?</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <textarea [(ngModel)]="commonService.schnStepTwoData.textArea3" id="description" class="col-100"
+                    name="comment-area" rows="6"
+                    placeholder={{commonService.schnStepTwoData.textArea3PlaceHolder}}></textarea>
+            </div>
+        </div>
+
+        <div class="mb-20"></div>
+    </div>
+
+</div>
+<div class="mb-20"></div>
+<a class="next-btn back-btn" (click)="onBack()">zurück</a>
+<a class="next-btn" (click)="onNext()">weiter</a>

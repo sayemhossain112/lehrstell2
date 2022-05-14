@@ -1,0 +1,248 @@
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
+
+<div class="first-step">
+    <div class="left-side">
+        <form [formGroup]="msPersonalForm" class="main-frm">
+            <div class="row">
+                <div class="col-100">
+                    <span class="small-heading red-color">
+                        <span class="underline">Klicke</span> die richtigen Felder an und <span
+                            class="underline">fülle</span> die leeren Kästchen mit
+                        deinen Informationen aus.
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                         <label for="fname" class="">Vorname</label>
+                    <input formControlName="firstName" type="text" id="fname" class="form-control" name="fname"
+                        placeholder="Mike" />
+                    </div>
+                   
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="lname" class="">Nachname</label>
+                        <input formControlName="lastName" type="text" id="lname" class="form-control" name="lname"
+                        placeholder="Muster" />
+                    </div>
+                </div>
+                
+            </div>
+
+    
+           
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="small-heading">
+                        Adresse
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Street" class="">Strasse</label>
+                        <input formControlName="street" type="text" id="Street" class="form-control" name="Street"
+                        placeholder="Musterstrasse" />
+                    </div>
+                   
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="number" class="">Nummer</label>
+                        <input formControlName="number" (keypress)="numericOnly($event)" type="text" id="number" class="form-control"
+                        name="number" placeholder="10" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="zip" class="">PLZ</label>
+                        <input formControlName="zip" type="text" id="zip" class="form-control" name="zip" placeholder="6005" />
+
+                    </div>
+                   
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="place" class="">Ort</label>
+                        <input formControlName="place" type="text" id="place" class="form-control" name="place"
+                        placeholder="Luzern" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Mail" class="">E-Mail Adresse</label>
+                        <input formControlName="email" type="text" id="Mail" class="form-control" name="Mail"
+                        placeholder="mikemuster@mail.ch" />
+                    </div>
+                   
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="mobile" class="">Mobile</label>
+                        <input formControlName="mobile" type="text" (keypress)="numericOnly($event)" id="mobile" class="form-control"
+                        name="mobile" placeholder="0799009090" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                                            <label for="date" class="">Ich schreibe ein Motivationsschreiben für eine:</label>
+
+                                            <select class="form-control" data-placeholder="" [ngModelOptions]="{standalone: true}"
+                                            [(ngModel)]="commonService.msType">
+                                            <option value="lehrstelle">Lehrstelle</option>
+                                            <option value="schnupperlehre">Schnupperlehre</option>
+                                        </select>
+                    </div>
+                   
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="derFirma" class="">Name der Firma</label>
+                        <input formControlName="derFirma" type="text" id="derFirma" class="form-control" name="derFirma"
+                        placeholder="Firma Logistik AG" />
+                    </div>
+                </div>
+            </div>
+
+  
+
+            <!-- ======== Adress Der Firma ======== -->
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="small-heading">
+                        Adresse der Firma
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="dfStreet" class="">Strasse</label>
+
+                        <input formControlName="dfStreet" type="text" id="dfStreet" class="form-control" name="dfStreet"
+                        placeholder="Fabrikstrasse 25" />
+                    </div>
+                   
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="dfZip" class="">PLZ</label>
+                        <input formControlName="dfZip" type="text" id="dfZip" class="form-control" name="dfZip"
+                        placeholder="6005" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="dfPlace" class="    ">Ort</label>
+                        <input formControlName="dfPlace" type="text" id="dfPlace" class="form-control" name="dfPlace"
+                        placeholder="Luzern" />
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dfBeruf" class="">Beruf für den du dich bewerben möchtest </label>
+
+                        <input formControlName="dfBeruf" type="text" id="dfBeruf" class="form-control" name="dfBeruf"
+                        placeholder="Logistiker" />
+                    </div>
+                   
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="ebaOrEfz" class="">EBA oder EFZ</label>
+                        <select data-placeholder="" formControlName="ebaOrEfz" class="form-control">
+                            <option value="EBA">EBA</option>
+                            <option value="EFZ">EFZ</option>
+                        </select>
+                    </div>
+                </div>
+                
+            </div>
+
+
+
+
+         
+            
+
+            
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="date" class="">An wen schreibst du den Brief?</label>
+                        <select class="form-control" data-placeholder="" formControlName="schreibst">
+                            <option value="Frau">Frau:</option>
+                            <option value="Herr">Herr:</option>
+                            <option value="unknown">Nicht bekannt</option>
+                        </select>
+                    </div>
+                   
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="date" class="  ">Vorname</label>
+                        <input formControlName="schreibst1Name" [maxlength]="50" type="text" id="schreibstName" class="form-control"
+                        name="schreibstName" placeholder="Judith" />
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="date" class="  ">Nachname</label>
+                        <input formControlName="schreibst2Name" [maxlength]="50" type="text" id="schreibstName" class="form-control"
+                        name="schreibstName" placeholder="Meier" />
+                    </div>
+                </div>
+            </div>
+                
+ 
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="date" class="">Datum von heute</label>
+                        <input formControlName="dob" type="date" id="date" class="form-control" name="date" placeholder="1.1.2022" />
+                    </div>
+                   
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+
+                
+            </div>
+           
+
+        </form>
+
+    </div>
+
+</div>
+
+<a class="next-btn" *ngIf="!showDoneBtn" (click)="onNext()">weiter</a>

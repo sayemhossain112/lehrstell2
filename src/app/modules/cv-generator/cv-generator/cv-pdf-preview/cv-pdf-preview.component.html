@@ -1,0 +1,221 @@
+<div class="cv-generator" id="cvGenerator">
+    <div class="content auto-Width">
+        <div class="page" id="pdf-page" #content>
+            <div class="header big-font">
+                Lebenslauf
+            </div>
+
+            <div class="mb-20"></div>
+
+            <div class="section">
+                <div class="table-side width-80">
+                    <div class="line">
+                        <span class="left-side w-30"> Vorname</span>
+                        <span class="right-side">{{commonService.personalData?.firstName || 'N/A' }} </span>
+                    </div>
+                    <div class="line">
+                        <span class="left-side w-30"> Nachname</span>
+                        <span class="right-side">{{commonService.personalData?.lastName || 'N/A' }} </span>
+                    </div>
+                    <div class="line">
+                        <span class="left-side w-30"> Adresse</span>
+                        <span class="right-side">{{commonService.personalData?.street + ' '
+                            +commonService.personalData?.number}}
+                        </span>
+                    </div>
+                    <div class="line">
+                        <span class="left-side w-30"></span>
+                        <span class="right-side">{{commonService.personalData?.zip + ' '
+                            +commonService.personalData?.place}}
+                        </span>
+                    </div>
+                    <div class="line">
+                        <span class="left-side w-30"> Telefon</span>
+                        <span class="right-side">{{commonService.personalData?.mobile || 'N/A'}} </span>
+                    </div>
+                    <div class="line">
+                        <span class="left-side w-30"> Email</span>
+                        <span class="right-side">{{commonService.personalData?.email || 'N/A'}} </span>
+                    </div>
+                    <div class="line">
+                        <span class="left-side w-30">Geburtsdatum</span>
+                        <span class="right-side">{{commonService.personalData?.dob | date : 'dd. MMMM yyyy'}} </span>
+                    </div>
+                    <div class="line">
+                        <span class="left-side w-30"> Eltern</span>
+                        <span class="right-side">{{commonService.personalData?.fFirstName +'
+                            '+commonService.personalData?.fLastName }}
+                            <span *ngIf="commonService.personalData?.fJob">
+                                {{' ('+commonService.personalData?.fJob +')'}}
+                            </span>
+                        </span>
+                    </div>
+                    <div class="line">
+                        <span class="left-side w-30"> </span>
+                        <span class="right-side">
+                            {{commonService.personalData?.mFirstName +' '+commonService.personalData?.mLastName }}
+                            <span *ngIf="commonService.personalData?.mJob">
+                                {{' ('+commonService.personalData?.mJob +')'}}
+                            </span>
+                        </span>
+                    </div>
+                    <div class="line" *ngIf="siblingsNamesString!='()'">
+                        <span class="left-side w-30"> Geschwister</span>
+                        <span class="right-side" *ngIf="siblings">{{siblingsNamesString }} </span>
+                        <span class="right-side" *ngIf="!siblings">Keine Geschwister </span>
+
+                    </div>
+
+                </div>
+                <div class="picture-side">
+                    <img class="picture-side" src={{commonService.personalData?.image}}>
+                </div>
+            </div>
+
+            <div class="mb-30"></div>
+            <hr class="split-line">
+
+            <ng-container *ngIf="schooling">
+                <div class="mb-20"></div>
+                <div class="section">
+                    <div class="table-side">
+                        <div class="line">
+                            <span class="left-side"> Schulbildung</span>
+                        </div>
+                        <div class="line" *ngFor="let school of commonService.schooling">
+                            <span class="left-side normal-font"> {{school.von }} - {{ school.bis }}</span>
+                            <span class="right-side">{{school.schule+', '+school.ort }} </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-30"></div>
+                <hr class="split-line">
+            </ng-container>
+
+            <ng-container *ngIf="languages">
+                <div class="mb-20"></div>
+                <div class="section">
+                    <div class="table-side">
+                        <div class="line">
+                            <span class="left-side"> Sprachen</span>
+                        </div>
+                        <div class="line" *ngFor="let language of commonService.languages">
+                            <ng-container *ngIf="language.language!=''">
+                                <span class="left-side normal-font"> {{language.language }}
+                                </span>
+                                <span class="right-side">{{language.type}} </span>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-30"></div>
+                <hr class="split-line">
+            </ng-container>
+
+            <ng-container *ngIf="hobbys">
+                <div class="mb-20"></div>
+                <div class="section">
+                    <div class="table-side">
+                        <div class="line">
+                            <span class="left-side"> Hobbys</span>
+                        </div>
+                        <div class="line" *ngFor="let hobby of commonService.hobbys">
+                            <span class="left-side normal-font"> {{hobby.name }} </span>
+                            <span class="right-side">{{hobby.description}} </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-30"></div>
+                <hr class="split-line">
+            </ng-container>
+
+            <ng-container>
+                <div class="mb-20"></div>
+                <div class="section">
+                    <div class="table-side">
+                        <div class="line">
+                            <span class="left-side">Schnupperlehren</span>
+                        </div>
+                        <ng-container *ngIf="trailApprentice">
+
+                            <div class="line" *ngFor="let trail of commonService.trailApprentice">
+                                <span class="left-side normal-font col-3">
+                                    {{trail.von | date : 'dd.MM'}} - {{trail.bis | date : 'dd.MM.yyyy'}}
+                                </span>
+                                <span class="right-side">{{trail.beruf +', '+trail.firma +', '+trail.ort }} </span>
+                            </div>
+                        </ng-container>
+                        <div class="line" *ngIf="!trailApprentice">
+                            <span class="left-side normal-font col-4">
+                                Noch keine Schnupperlehren absolviert
+                            </span>
+                            <span class="right-side"> </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-30"></div>
+                <hr class="split-line">
+            </ng-container>
+
+            <ng-container *ngIf="references">
+                <div class="mb-20"></div>
+                <div class="section">
+                    <div class="table-side ">
+                        <div class="line">
+                            <span class="left-side">{{ commonService.references.length > 1 ? 'Referenzen' : 'Referenz'
+                                }} </span>
+                        </div>
+                        <!-- <div class="mb-10"></div> -->
+                        <ng-container *ngIf="commonService.trailApprentice.length < 6">
+                            <div class="line flex-wrap">
+                                <div class="reference-box">
+                                    <span class="">
+                                        {{commonService.references[0]?.firstName+'
+                                        '+commonService.references[0]?.lastName+'
+                                        '}}</span>
+                                    <span *ngIf="commonService.references[0]?.function"> {{'
+                                        ('+commonService.references[0]?.function+') '}} </span><br>
+                                    <span class="">Mobile {{commonService.references[0]?.mobile}}</span><br>
+                                    <span class="">{{commonService.references[0]?.email}}</span><br>
+                                </div>
+                            </div>
+
+                            <div class="line flex-wrap">
+                                <ng-container *ngFor="let reference of commonService.references; let i=index">
+                                    <div class="reference-box" *ngIf="i!=0">
+                                        <span class="">
+                                            {{reference.firstName+' '+reference.lastName+' '}}</span>
+                                        <span *ngIf="reference.function"> {{' ('+reference.function+') '}} </span><br>
+                                        <span class="">Mobile {{reference.mobile}}</span><br>
+                                        <span class="">{{reference.email}}</span><br>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </ng-container>
+
+                        <ng-container *ngIf="commonService.trailApprentice.length > 5">
+                            <div class="line flex-wrap">
+                                <div class="reference-box"
+                                    *ngFor="let reference of commonService.references; let i=index">
+                                    <span class="">
+                                        {{reference.firstName+' '+reference.lastName+' '}}</span>
+                                    <span *ngIf="reference.function"> {{' ('+reference.function+') '}} </span><br>
+                                    <span class="">Mobile {{reference.mobile}}</span><br>
+                                    <span class="">{{reference.email}}</span><br>
+                                </div>
+                            </div>
+                        </ng-container>
+
+                    </div>
+                </div>
+            </ng-container>
+
+        </div>
+        <div class="mb-10"></div>
+        <a class="next-btn back-btn" (click)="onBack()">zurück</a>
+        <a class="next-btn" (click)="convertToPDF()">Download PDF</a>
+    </div>
+</div>
