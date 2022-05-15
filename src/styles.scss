@@ -293,6 +293,7 @@ body {
     background-image: url("./assets/images/small-plus-icon.png");
 }
 
+
 .plus-icon:hover {
     background-image: url("./assets/images/plus-icon-s.png");
 }
@@ -741,7 +742,12 @@ select {
 
 
     @media only screen and (max-width: 768px) {
-        
+        .mbl-res{
+            // margin-top: -67px !important;
+        }
+        .info-box {
+            margin-bottom: 15px;
+        }
 .btn1 {
     margin-top: 20px;
     font-size: 6px;
