@@ -1,0 +1,288 @@
+<!-- <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+             <label for="fname" class="">Vorname</label>
+        <input formControlName="firstName" type="text" id="fname" class="form-control" name="fname"
+            placeholder="Mike" />
+        </div>
+       
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="lname" class="">Nachname</label>
+            <input formControlName="lastName" type="text" id="lname" class="form-control" name="lname"
+            placeholder="Muster" />
+        </div>
+    </div>
+    
+</div> -->
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
+
+
+<div class="first-step">
+  
+    <div class="row  make-res">
+      <div class="col-md-8">
+        <div class=" ">
+            <form [formGroup]="personalForm" class=" ">
+                <div class="row">
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label for="fname" class="">Vorname</label> 
+                            <input formControlName="firstName" type="text" id="fname" class="form-control" name="fname" placeholder="" />
+                        </div> 
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label for="lname" class="">Nachname</label> 
+                            <input formControlName="lastName" type="text" id="lname" class="form-control" name="lname" placeholder="" />
+                        </div> 
+                    </div>
+                </div>
+    
+
+
+                <div class="row">
+                    <div class="col-md-12"> 
+                        <span class="small-heading">
+                            Adresse
+                        </span>
+                    </div> 
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label for="Street" class="">Strasse</label>
+                            <input formControlName="street" type="text" id="Street" class="form-control" name="Street" />
+                        </div> 
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label for="number" class=" ">Nummer</label>
+                            <input formControlName="number" (keypress)="numericOnly($event)" type="text" id="number" class="form-control"
+                            name="number" />
+                        </div> 
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label for="zip" class="">PLZ</label>
+                            <input formControlName="zip" type="text" id="zip" class="form-control" name="zip" />
+                        </div> 
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label for="place" class=" ">Ort</label>
+                            <input formControlName="place" type="text" id="place" class="form-control" name="place" />
+                        </div> 
+                    </div>
+                </div>
+    
+               
+                <div class="row">
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label for="mobile" class="">Telefon</label>
+                            <input formControlName="mobile" type="text" (keypress)="numericOnly($event)" id="mobile" class="form-control"
+                            name="mobile" />
+                        </div> 
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label for="Mail" class="">Email</label>
+                            <input formControlName="email" type="text" id="Mail" class="form-control" name="Mail" placeholder="" />
+                        </div> 
+                    </div>
+                </div>
+    
+                
+                <div class="row">
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label for="date" class="">Geb.datum</label>
+                            <input formControlName="dob" type="date" max="{{date | date:'yyyy-MM-dd'}}" id="date" class="form-control"
+                            name="date" />
+                        </div> 
+                    </div>
+                    
+                </div>
+
+                
+                <div class="mb-10"></div>
+                <div class="row">
+                    <div class="col-md-12"> 
+                        <span class="small-heading">
+                            Eltern <span class=" info-Box-line"> Falls nur ein Elternteil, zweite Zeile leer lassen.
+                                Feld Job kann auch leer gelassen werden. </span>
+                        </span>
+                    </div> 
+                </div>
+               
+     
+    
+                <div class="row">
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                            <label for="First">Vorname</label>
+                            <input formControlName="fLastName" type="text" id="First" class="form-control " name="First" />
+                        </div> 
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                            <label for="Last" class="  ">Nachname</label>
+                            <input formControlName="fFirstName" type="text" id="Last" class="form-control" name="Last" />
+                        </div> 
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                            <label for="Job" class="  ">Job</label>
+                            <input formControlName="fJob" type="text" id="Job" class="form-control" name="Job" />
+                        </div> 
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                            <label for="First">Vorname</label>
+                            <input formControlName="mLastName" type="text" id="mLastName" class="form-control" name="mLastName" />
+                        </div> 
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                            <label for="Last" class="  ">Nachname</label>
+                            <input formControlName="mFirstName" type="text" id="mFirstName" class="form-control" name="mFirstName" />
+                        </div> 
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                            <label for="Job" class="  ">Job</label>
+                            <input formControlName="mJob" type="text" id="mJob" class="form-control" name="mJob" />
+                        </div> 
+                    </div>
+                </div>
+ 
+     
+                <div class="mb-10"></div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="small-heading">
+                            Geschwister <span class="info-Box-line"> Keine Geschwister = Felder leer lassen. Job/Schule kann
+                                auch leer gelassen werden. </span>
+                        </span>
+                    </div>
+                </div>
+            </form>
+
+
+
+            
+            <ng-container *ngFor="let sibling of commonService.siblings;let i = index">
+
+                <div class="row">
+                    <div class="col-md-5"> 
+                        <div class="form-group">
+                            <label for="siblingsName" class="">Vorname</label>
+                            <input type="text" [(ngModel)]="sibling.firstname" id="siblingsName" class="form-control"
+                            name="siblingsName" />
+                        </div> 
+                    </div>
+                    <div class="col-md-5"> 
+                        <div class="form-group">
+                            <label for="siblingsjob" class="  ">Job/Schule</label>
+                            <input type="text" id="siblingsjob" [(ngModel)]="sibling.job" class="form-control" name="siblingsjob" />
+                        </div> 
+                    </div>
+                    <div class="col-md-2" style="margin: auto;padding-top: 15px; margin-bottom: 25px;"> 
+                        <div class=" ">
+                            <span *ngIf="i!=0" class="clickable" (click)="deleteSiblingObj(i)">&#10060;</span>
+                            <span *ngIf="i!=0" class="clickable delete-text" (click)="deleteSiblingObj(i)"
+                                style="margin-top: 4px;">Löschen</span>
+                             
+                        </div> 
+                    </div>
+                    
+                       
+                </div>
+
+
+
+            </ng-container>
+    
+    
+    
+            <div class="row">
+                <div class="col-md-12" style="display: flex; align-items:center; margin-top: -15px;">
+                     <div class="plus-icon clickable" (click)="addSibling()"> </div>
+                <span class="icon-after-text clickable" (click)="addSibling()"> Geschwister hinzufügen </span>
+                </div>
+               
+            </div>
+    
+        </div>
+    
+      </div>    
+      <div class="col-md-4">
+        <div class="">
+
+            <div class="row">
+                <div class="col-md-12"> 
+                    <span class="small-heading">
+                        <div class="info-Box-line-2"> 1. Zuerst Foto hochladen </div>
+                        <div class="info-Box-line-2"> 2. Danach im unteren Bild zuschneiden </div>
+                        <div class="info-Box-line-2"> 3. Bild einfügen klicken </div>
+                    </span>
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-md-12"> 
+                    <span class="small-heading">
+                        Bild
+                    </span>
+                    <div class="ml-7 imag-box clickable" [ngStyle]="{'background-image':'url('+ [croppedImage] +')'}">
+    
+                        <input class="inputfile" type="file" (change)="fileChangeEvent($event)" name="file" id="file"
+                            accept="image/*" />
+        
+                        <span *ngIf="croppedImage==''" class="image-content" for="file">
+                            <b> Foto hochladen (JPG) </b> <br>
+                        </span>
+        
+                    </div>
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-md 12">
+                    <image-cropper *ngIf="showDoneBtn" class="imag-box" [imageChangedEvent]="imageChangedEvent"
+                    [maintainAspectRatio]="true" [aspectRatio]="3/ 3.3" (imageCropped)="imageCropped($event)"
+                    (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
+                <button type="button" class="clickable" *ngIf="showDoneBtn" (click)="imageCropedDone()">Bild
+                    einfügen</button>
+                </div>
+            </div>
+
+
+            
+    
+        </div>
+      </div>
+    </div> 
+</div>
+
+ 
+ 
+<a class="next-btn" *ngIf="!showDoneBtn" (click)="onNext()">weiter</a>
+
+
+
+
+
+
+ 

@@ -1,0 +1,43 @@
+.width-92-5 {
+    width: 92.5%;
+}
+.left-language-side{
+    margin-right: 7%;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .cv-generator{
+        .content{
+            .heading-btn {
+        
+        font-size: 10px;
+         
+    }}}
+
+    .form-control{
+        width: 130%;
+        margin: auto;
+    }
+    .next-btn {
+       
+     position:unset;
+      
+        margin: 12px 0px 6px 35px;
+        /* padding: 70px; */
+        
+    }
+    .home-content {
+        .btns { 
+            display: block;
+            .create-cv-btn {
+                margin: auto;
+                margin-bottom: 20px;
+                transition: 1s;
+                font-size: 14px;
+                width: 235px;
+                height: 60px;
+            }
+        }
+    }       
+    }

@@ -1,0 +1,149 @@
+<div class="first-step">
+    <div class="motivation-container">
+
+        <div class="row">
+            <div class="col-100">
+                <span class="small-heading red-color">
+                    <span class="underline">Beantworte</span> die Fragen und <span class="underline">klicke</span> die
+                    richtigen Felder an.
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-100">
+                <label class="red-color">
+                    (die Vorlage hilft dir, wenn du nicht genau weisst, was du schreiben sollst).
+                </label>
+            </div>
+        </div>
+        <div class="mb-20"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="">Welche Termine wären für dich für eine Schnupperlehre am besten?</label>
+            </div>
+        </div>
+        <div class="mb-10"></div>
+        <!-- Termin 1 -->
+        <div class="row">
+            <div class="col-1-3">
+                <span class="small-heading">
+                    Termin 1
+                </span>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-0-7">
+                <label for="Last" class="">Von</label>
+            </div>
+            <div class="col-4">
+                <input [(ngModel)]="commonService.schnStepThreeData.T1Von" type="date" id="date" class="" name="date" />
+            </div>
+
+            <div class="col-0-7">
+                <label for="First" class="label-float-right">Bis</label>
+            </div>
+            <div class="col-4">
+                <input [(ngModel)]="commonService.schnStepThreeData.T1Bis" type="date" id="date" class="" name="date" />
+            </div>
+        </div>
+        <div class="mb-10"></div>
+        <!-- Termin 2 -->
+        <div class="row">
+            <div class="col-1-3">
+                <span class="small-heading">
+                    Termin 2
+                </span>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-0-7">
+                <label for="Last" class="">Von</label>
+            </div>
+            <div class="col-4">
+                <input [(ngModel)]="commonService.schnStepThreeData.T2Von" type="date" id="date" class="" name="date" />
+            </div>
+
+            <div class="col-0-7">
+                <label for="First" class="label-float-right">Bis</label>
+            </div>
+            <div class="col-4">
+                <input [(ngModel)]="commonService.schnStepThreeData.T2Bis" type="date" id="date" class="" name="date" />
+            </div>
+        </div>
+        <div class="mb-10"></div>
+        <!-- Termin 3 -->
+        <div class="row">
+            <div class="col-1-3">
+                <span class="small-heading">
+                    Termin 3
+                </span>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-0-7">
+                <label for="Last" class="">Von</label>
+            </div>
+            <div class="col-4">
+                <input [(ngModel)]="commonService.schnStepThreeData.T3Von" type="date" id="date" class="" name="date" />
+            </div>
+
+            <div class="col-0-7">
+                <label for="First" class="label-float-right">Bis</label>
+            </div>
+            <div class="col-4">
+                <input [(ngModel)]="commonService.schnStepThreeData.T3Bis" type="date" id="date" class="" name="date" />
+            </div>
+        </div>
+        <div class="mb-20"></div>
+        <div class="mb-20"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="">Beilagen anklicken:</label>
+            </div>
+        </div>
+
+        <div class="mb-10"></div>
+        <div class="row">
+
+            <div class="col-1-7">
+                <label for="Lebenslauf" class="">Lebenslauf</label>
+            </div>
+            <div class="col-0-5 clickable">
+                <input type="checkbox" [(ngModel)]="commonService.schnStepThreeData.lebenslauf" name="Lebenslauf"
+                    class="height-18" id="Lebenslauf" value="value">
+            </div>
+
+            <div class="col-2 clickable">
+                <label for="Zeugnisse" class="ml-20">Zeugnisse</label>
+            </div>
+            <div class="col-0-5">
+                <input type="checkbox" [(ngModel)]="commonService.schnStepThreeData.zeugnisse" name="Zeugnisse"
+                    class="height-18" id="Zeugnisse" value="value">
+
+            </div>
+
+            <div class="col-2">
+                <label for="Eigene" class="label-float-right">Eigene:</label>
+            </div>
+            <div class="col-3-5">
+                <input type="text" [(ngModel)]="commonService.schnStepThreeData.eigene" id="Eigene" class="col-9 "
+                    name="Eigene" maxlength="50" />
+            </div>
+
+        </div>
+
+        <div class="mb-20"></div>
+        <div class="mb-20"></div>
+        <div class="mb-20"></div>
+    </div>
+
+</div>
+<div class="mb-20"></div>
+<div class="mb-20"></div>
+<div class="mb-20"></div>
+<a class="next-btn back-btn" (click)="onBack()">zurück</a>
+<a class="next-btn" (click)="onNext()">Vorschau</a>

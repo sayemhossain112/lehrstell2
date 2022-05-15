@@ -1,0 +1,18 @@
+.auto-Width {
+    width: auto !important;
+}
+
+.back-btn {
+    margin: 0px 0px 30px 57px !important;
+}
+
+.mb-15px {
+    margin-bottom: 15px !important;
+}
+
+
+@media only screen and (max-width: 768px)  {
+    .back-btn {
+        margin: 0px 8px -12px 100px !important;
+    }
+}

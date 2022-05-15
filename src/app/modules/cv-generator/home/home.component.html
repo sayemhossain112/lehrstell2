@@ -1,0 +1,26 @@
+
+
+<div class="home-content">
+    <div class="btns">
+        <a class="create-cv-btn" (click)="navigateTo('/cv-generator')">
+            Lebenslauf erstellen
+        </a>
+
+        <a class="create-cv-btn" (click)="navigateTo('/motivation-sschreiben')">
+            Motivationsschreiben erstellen
+        </a>
+    </div>
+</div>
+
+<div class="cv-generator" *ngIf="isShowCookiesContainer">
+    <div class="content">
+        <div (click)="crossClick()" class="clickable" style="text-align: right; margin-top: -20px; margin-right: -20px;">
+            <img src="assets/images/red cross.png" width="40">
+        </div>
+        <div class="alert-box">
+            <b>Der Schutz deiner Daten ist uns wichtig</b>
+            <p align="justify">
+                Wir verwenden Cookies zur Unterstützung der Benutzerfreundlichkeit, damit man den Lebenslauf und das Motivationsschreiben erstellen kann. Mit Wegklicken dieses Fensters, stimmst du der Cookie-Nutzung zu. <u class="clickable" (click)="navigateTo('/datenschutzerklärung')">Datenschutzerklärung</u></p>
+        </div>
+    </div>
+</div>

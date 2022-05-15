@@ -1,0 +1,31 @@
+.width-0-1 {
+    width: 1%;
+}
+
+@media only screen and (max-width: 768px) {
+    .form-control{
+        width: 124%;
+        margin: auto;
+    }
+    .next-btn {
+       
+     position:unset;
+      
+        margin: 12px 0px 6px 35px;
+        /* padding: 70px; */
+        
+    }
+    .home-content {
+        .btns { 
+            display: block;
+            .create-cv-btn {
+                margin: auto;
+                margin-bottom: 20px;
+                transition: 1s;
+                font-size: 14px;
+                width: 235px;
+                height: 60px;
+            }
+        }
+    }       
+    }

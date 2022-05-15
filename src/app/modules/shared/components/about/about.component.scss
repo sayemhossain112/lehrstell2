@@ -1,0 +1,24 @@
+.content {
+    min-height: 35vh;
+    width: 60vw;
+}
+
+.header {
+    margin-bottom: 20px !important;
+}
+
+.impressum-box {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.content {
+    min-height: 35vh;
+    width: 60vw;
+}
+@media only screen and (max-width: 768px) {
+    .content {
+         width: 100vw;
+    }
+
+}

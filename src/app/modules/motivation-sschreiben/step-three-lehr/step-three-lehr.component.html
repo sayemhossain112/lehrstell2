@@ -1,0 +1,91 @@
+<div class="first-step">
+    <div class="motivation-container">
+
+        <div class="row">
+            <div class="col-100">
+                <span class="small-heading red-color">
+                    <span class="underline">Beantworte</span> die Fragen und <span class="underline">klicke</span> die
+                    richtigen Felder an.
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-100">
+                <label class="red-color">
+                    (die Vorlage hilft dir, wenn du nicht genau weisst, was du schreiben sollst).
+                </label>
+            </div>
+        </div>
+        <div class="mb-20"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="">Welche Klasse besuchst du, welches sind deine Lieblingsfächer und Hobbys?
+                    (Schreibe in ganzen Sätzen).</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <textarea id="description" [(ngModel)]="commonService.lehrStepThreeData.textArea1" class="col-100"
+                    name="comment-area" rows="5"
+                    placeholder={{commonService.lehrStepThreeData.textArea1PlaceHolder}}></textarea>
+            </div>
+        </div>
+
+
+        <div class="mb-10"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="">Beilagen anklicken:</label>
+            </div>
+        </div>
+
+        <div class="mb-10"></div>
+        <div class="row">
+
+            <div class="col-md-4 clickable" style="display: flex; align-items: center;">
+                <label for="Lebenslauf" class="">Lebenslauf</label>
+                <input type="checkbox" [(ngModel)]="commonService.lehrStepThreeData.lebenslauf" name="Lebenslauf"
+                    class="height-18" id="Lebenslauf" value="value">
+            </div> &nbsp;&nbsp;&nbsp;
+            <div class="col-md-4 clickable" style="display: flex; align-items: center;">
+                <label for="Stellwerktest" class=" ">Stellwerktest</label>
+                <input type="checkbox" [(ngModel)]="commonService.lehrStepThreeData.stellwerktest" name="Stellwerktest"
+                class="height-18" id="Stellwerktest" value="value">
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div class="col-md-4 clickable" style="display: flex; align-items: center;">
+                <label for="Eigene" class="label-float-right">Eigene:</label>
+                <input type="text" [(ngModel)]="commonService.lehrStepThreeData.eigene" id="Eigene" class="col-9 "
+                name="Eigene" maxlength="50" />
+            </div>
+
+        </div> 
+         
+        <div class="row">
+            <div class="col-md-4 clickable" style="display: flex; align-items: center;">
+                <label for="Zeugnisse" class="">Zeugnisse</label>
+                <input type="checkbox" [(ngModel)]="commonService.lehrStepThreeData.zeugnisse" name="Zeugnisse"
+                    class="height-18" id="Zeugnisse" value="value">
+            </div>
+&nbsp;&nbsp;&nbsp;
+            <div class="col-md-4 clickable" style="display: flex; align-items: center;">
+                <label for="Multicheck" class=" ">Multicheck</label>
+                <input type="checkbox" [(ngModel)]="commonService.lehrStepThreeData.multicheck" name="Multicheck"
+                    class="height-18" id="Multicheck" value="value">
+
+            </div>
+            &nbsp;&nbsp;&nbsp;
+        </div>
+
+        <div class="mb-20"></div>
+        <div class="mb-20"></div>
+        <div class="mb-20"></div>
+    </div>
+
+</div>
+<div class="mb-20"></div>
+<div class="mb-20"></div>
+<div class="mb-20"></div>
+<a class="next-btn back-btn" (click)="onBack()">zurück</a>
+<a class="next-btn" (click)="onNext()">Vorschau</a>

@@ -1,0 +1,101 @@
+<div class="cv-generator" id="cvGenerator">
+    <div class="content auto-Width">
+        <div class="page page-ms" id="pdf-page" #content>
+            <div class="section">
+                <div class="ms-body">
+                    <div class="mb-10"></div>
+                    <p align="justify">
+                        {{commonService.msPersonalForm?.firstName +' '+commonService.msPersonalForm?.lastName}}<br>
+                        {{commonService.msPersonalForm?.street +' '+commonService.msPersonalForm?.number}}<br>
+                        {{commonService.msPersonalForm?.zip +' '+commonService.msPersonalForm?.place}}<br>
+                        {{commonService.msPersonalForm?.email}}<br>
+                        {{commonService.msPersonalForm?.mobile }}
+                    </p>
+                    <div class="mb-10"></div>
+                    <p align="justify">
+                        {{commonService.msPersonalForm?.derFirma}}<br>
+                        <span *ngIf="commonService.msPersonalForm.schreibst != 'unknown'">
+                            z.H. {{commonService.msPersonalForm?.schreibst1Name +'
+                            '+commonService.msPersonalForm?.schreibst2Name }}<br>
+                        </span>
+                        {{commonService.msPersonalForm?.dfStreet }}<br>
+                        {{commonService.msPersonalForm?.dfZip +' '+commonService.msPersonalForm?.dfPlace}}
+
+                    </p>
+                    <div class="mb-10"></div>
+                    <p align="justify"> {{commonService.msPersonalForm?.dob | date : 'dd. MMMM yyyy'}} </p>
+                    <div class="mb-10"></div>
+                    <!-- class="bold" -->
+                    <p align="justify"> <b> Bewerbung um eine {{commonService.msType |titlecase}} als
+                            {{commonService.msPersonalForm?.dfBeruf |titlecase}}
+                            {{commonService.msPersonalForm?.ebaOrEfz }}</b>
+                    </p>
+
+                    <div class="mb-10"></div>
+
+                    <p class="mb-15px" *ngIf="commonService.msPersonalForm?.schreibst=='unknown'">
+                        Sehr geehrte Damen und Herren
+                    </p>
+                    <p *ngIf="commonService.msPersonalForm?.schreibst!='unknown'">
+                        Sehr
+                        <span *ngIf="commonService.msPersonalForm?.schreibst=='Frau'">geehrte </span>
+                        <span *ngIf="commonService.msPersonalForm?.schreibst=='Herr'">geehrter </span>
+                        {{commonService.msPersonalForm?.schreibst}}
+                        {{commonService.msPersonalForm?.schreibst2Name}}
+                    </p>
+
+                    <p class="mb-15px" align="justify"> {{commonService.schnStepTwoData.textArea1}}</p>
+                    <p class="mb-15px" align="justify">{{commonService.schnStepTwoData.textArea2}}</p>
+                    <p class="mb-15px" align="justify">{{commonService.schnStepTwoData.textArea3}}</p>
+
+                    <p align="justify">Ideale Termine zum Schnuppern sind für mich:
+                    </p>
+                    <p align="justify">
+                        <ng-container
+                            *ngIf="commonService.schnStepThreeData.T1Von!='' && commonService.schnStepThreeData.T1Bis!=''">
+                            {{commonService.schnStepThreeData.T1Von | date : 'dd.MM yyyy'}} -
+                            {{commonService.schnStepThreeData.T1Bis | date : 'dd.MM yyyy'}} <br>
+
+                        </ng-container>
+                        <ng-container
+                            *ngIf="commonService.schnStepThreeData.T2Von!='' && commonService.schnStepThreeData.T2Bis!=''">
+                            {{commonService.schnStepThreeData.T2Von | date : 'dd.MM yyyy'}} -
+                            {{commonService.schnStepThreeData.T2Bis | date : 'dd.MM yyyy'}} <br>
+                        </ng-container>
+
+                        <ng-container
+                            *ngIf="commonService.schnStepThreeData.T3Von!='' && commonService.schnStepThreeData.T3Bis!=''">
+                            {{commonService.schnStepThreeData.T3Von | date : 'dd.MM yyyy'}} -
+                            {{commonService.schnStepThreeData.T3Bis | date : 'dd.MM yyyy'}}
+                        </ng-container>
+
+                    </p>
+                    <div class="mb-10"></div>
+
+                    <p align="justify">
+                        Ich freue mich von Ihnen zu hören.
+                    </p>
+                    <div class="mb-10"></div>
+                    <p align="justify">Freundliche Grüsse
+                    </p>
+                    <div class="mb-10"></div>
+                    <p align="justify">
+                        {{commonService.msPersonalForm?.firstName +' '+commonService.msPersonalForm?.lastName}}
+
+                    </p>
+
+                    <div class="mb-10"></div>
+                    <p class="ms-bottom-text" *ngIf="beilagen!=''">Beilagen: <br>
+                        {{beilagen}}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="mb-50"></div>
+        <a class="next-btn back-btn" (click)="onBack()">zurück</a>
+        <a class="next-btn second-btn" (click)="exportToPDF()">Download PDF</a>
+        <a class="next-btn" (click)="exportToWord()">Download Word</a>
+    </div>
+
+</div>
