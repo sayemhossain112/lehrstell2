@@ -409,9 +409,17 @@ label {
     font-family: sans-serif;
     color: #292929;
 }
-input, .form-control {
+input  {
     background-color: #eff1f4 !important;
     height: 35px !important;
+    border: none !important;
+    color: #292929 !important;
+    border-radius: 0px !important;
+    font-family: sans-serif !important;
+}
+ .form-control {
+    background-color: #eff1f4 !important;
+    // height: 35px !important;
     border: none !important;
     color: #292929 !important;
     border-radius: 0px !important;
