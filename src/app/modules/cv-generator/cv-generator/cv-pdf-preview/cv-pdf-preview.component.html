@@ -141,14 +141,14 @@
                         <ng-container *ngIf="trailApprentice">
 
                             <div class="line" *ngFor="let trail of commonService.trailApprentice">
-                                <span class="left-side normal-font col-10">
+                                <span class="left-side normal-font">
                                     {{trail.von | date : 'dd.MM'}} - {{trail.bis | date : 'dd.MM.yyyy'}}
                                 </span>
                                 <span class="right-side">{{trail.beruf +', '+trail.firma +', '+trail.ort }} </span>
                             </div>
                         </ng-container>
                         <div class="line" *ngIf="!trailApprentice">
-                            <span class="left-side normal-font col-8"  style="padding: 0;">
+                            <span class="left-side normal-font col-5"  style="padding: 0;">
                                 Noch keine Schnupperlehren absolviert
                             </span>
                             <span class="right-side"> </span>

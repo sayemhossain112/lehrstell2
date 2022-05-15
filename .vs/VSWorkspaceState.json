@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\modules\\cv-generator",
+    "\\src\\app\\modules\\cv-generator\\cv-generator",
+    "\\src\\app\\modules\\cv-generator\\cv-generator\\trail-and-reference"
+  ],
+  "SelectedNode": "\\src\\styles.scss",
+  "PreviewInSolutionExplorer": false
+}
