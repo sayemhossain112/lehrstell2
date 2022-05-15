@@ -742,6 +742,17 @@ select {
 
 
     @media only screen and (max-width: 768px) {
+
+      .info-Box-line {
+       
+        border: none;
+         
+        padding: 0px;
+        margin-left: 0px;
+      }
+
+
+
         .mbl-res{
             // margin-top: -67px !important;
         }
@@ -976,4 +987,3 @@ select {
           
 
  
-       
