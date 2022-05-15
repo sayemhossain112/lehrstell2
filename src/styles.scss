@@ -409,6 +409,10 @@ label {
     font-family: sans-serif;
     color: #292929;
 }
+input::placeholder, textarea::placeholder {
+    font: 14px/3 sans-serif;
+    line-height: 1.8;
+}
 input  {
     background-color: #eff1f4 !important;
     height: 35px !important;
