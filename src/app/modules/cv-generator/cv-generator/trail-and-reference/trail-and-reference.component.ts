@@ -29,7 +29,7 @@ export class TrailAndReferenceComponent implements OnInit {
     this.commonService.step = 2
     localStorage.setItem('step', JSON.stringify(this.commonService.step))
   }
-
+   
   addTrail() {
     this.commonService.trailApprentice.push({ von: '', bis: '', beruf: '', firma: '', ort: '' })
   }
